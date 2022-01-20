@@ -8,7 +8,7 @@ buyGet = [{
   id: 7,
   category: "Buy1Get1",
   imgSrc: "../images/categories/1.jpg",
-  name: " Non-veg pizzaa",
+  name: "Non-veg pizzaa",
   price: 275,
   veg: false
 },
