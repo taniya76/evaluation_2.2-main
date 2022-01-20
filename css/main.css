@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.card-box {
+    border-radius: 30px;
+}
+
+.container{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    padding: 5px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar,.cartbar {
+    position: -webkit-stick;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    height: 80vh;
+    top: 70px;
+    bottom: auto;
+}
+
+.sidebar{
+    letter-spacing: 1px;
+    /* color: rgb(139, 139, 139); */
+}
+
+.upper-nav{
+    -webkit-box-shadow: 0px 4px 21px -3px rgba(117, 115, 115, 0.75);
+    -moz-box-shadow: 0px 4px 21px -3px rgba(117, 115, 115, 0.75);
+    box-shadow: 0px 4px 21px -3px rgba(117, 115, 115, 0.75);
+}
+
+.vertical_ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    /* background-color: #f1f1f1; */
+}
+
+.vertical_list {
+    display: block;
+    color: #000;
+    padding: 15px 16px;
+    text-decoration: none;
+}
+
+.vertical_list:hover{
+    color: #ff0000;
+} 
+
+.cartbar{
+    border:none;
+    text-align: center;  
+      
+}
+
+.cart-img{
+    height: 250px;
+    width:250px;
+    margin:auto;
+    border: 1px solid #ebe0e0;
+}
+
+.cards-image{
+    width: 18rem;
+    margin: 20px;
+}
+.cart-item{
+    width: auto;
+    max-height:400px;
+    background-color: azure;
+}
+
+#search{
+    border: 1px solid #aca6a6;
+    border-radius: 10px;
+    padding: 6px 15px;
+    opacity: 0.5;
+}
+.para-1, .para-2{
+    text-align: left;
+}
+
+.cat-heading{
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.product{
+ font-size: 1.3rem;
+ font-weight: bold;
+ opacity: 0.4;
+}
+
+.cart-heading{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.decrease{
+    border: none;
+    font-size: 1.5rem;
+    background-color: azure;
+}
+.qty-input{
+    width: 10%;
+    border: none;
+    padding: 1px 3px;
+}
+
+@media (max-width:768px){
+    .cartbar{
+        display: none;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .grid-container{
+        grid-template-columns: 100% 0% 0%;
+    }
+
+    .ham-icon{
+        display: none;
+    }
+    #mbl-active-state{
+        display: block;
+    }
+
+    .bt-icons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .copy{
+        display: none;
+    }
+}
+
+@media (max-width:991px) and (min-width: 768px){
+    .sidebar,.cartbar{
+      height: 156vh !important;
+    }
+  }
+
+  @media (min-width:768px){
+   #mbl-active-state{
+       display: none;
+   }
+  }

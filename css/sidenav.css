@@ -1,0 +1,53 @@
+.side-bar{
+    top:0;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+}
+.close{
+    position: absolute;
+    color: white;
+    top:1%;
+    right: 83%;
+    z-index: 999999;
+    padding-top: 19px;
+    margin-right: -10px;
+    font-size: 20px;
+    /* display: none; */
+
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-image: url(../images/banner/sidebar.jpg);
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 7rem;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }

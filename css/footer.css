@@ -1,0 +1,265 @@
+/* @font-face {
+    font-family: 'Muli-italic';
+    src: url(../fonts/Muli-Italic.ttf);
+}
+@font-face {
+    font-family: 'Muli-Light';
+    src: url(../fonts/Muli-Light.ttf);
+}
+@font-face {
+    font-family: 'Muli-LightItalic';
+    src: url(../fonts/Muli-LightItalic.ttf);
+}
+@font-face {
+    font-family: 'Muli-Regular';
+    src: url(../fonts/Muli-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-heading{
+line-height: 1.5em;
+font-weight: bolder;
+text-align: center;
+
+}
+.main-para{
+    opacity: 0.4;
+    line-height: 1.3em;
+    text-align: center;
+}
+
+.temperature-tracking, .contact-less-delivery{
+    display:flex;
+    padding-left: 15px;
+    
+}
+.temperature-tracking{
+    margin-bottom: 3.5%;
+}
+.safety-measure-upper {
+    margin: 154px auto;
+    margin-bottom: 3%;
+}
+.safety-measure-para-1
+,.safety-measure-para-2{
+    padding-left: 10px;
+    margin-top: 3.5%;
+}
+
+.youtube-class {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+iframe {
+    width: 90%;
+    height: 50vh;
+    object-fit: cover;
+    margin: 23px;
+    border-radius: 10px;
+}
+
+.footer-measures{
+    background-color:#ffe6cd;
+    margin-top:5% !important;
+    padding-top:2% !important;
+    padding-bottom:2% !important;
+}
+.measure>img{
+    height:50px !important;
+    width:50px !important;
+
+}
+.measure>p{
+    padding-top:5% !important;
+    font-size:12px !important;
+    justify-content: center!important;
+    text-align: center !important;
+}
+
+@media (max-width:700px){
+    .safety-measures-lower{
+        display:flex !important;
+        flex-direction: column!important;
+    }
+} */
+
+@font-face {
+    font-family: 'Muli-italic';
+    src: url(../fonts/Muli-Italic.ttf);
+}
+@font-face {
+    font-family: 'Muli-Light';
+    src: url(../fonts/Muli-Light.ttf);
+}
+@font-face {
+    font-family: 'Muli-LightItalic';
+    src: url(../fonts/Muli-LightItalic.ttf);
+}
+@font-face {
+    font-family: 'Muli-Regular';
+    src: url(../fonts/Muli-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-heading{
+line-height: 1.5em;
+font-weight: bolder;
+text-align: center;
+
+}
+.main-para{
+    opacity: 0.6;
+    line-height: 1.5em;
+    word-spacing: 2px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.temperature-tracking, .contact-less-delivery{
+    display:flex;
+    padding-left: 15px;
+    
+}
+.temperature-tracking{
+    margin-bottom: 3.5%;
+}
+.safety-measure-upper {
+    margin: 154px auto;
+    margin-bottom: 3%;
+}
+.safety-measure-para-1
+,.safety-measure-para-2{
+    padding-left: 10px;
+    margin-top: 3.5%;
+}
+
+.youtube-class {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+iframe {
+    width: 90%;
+    height: 50vh;
+    object-fit: cover;
+    margin: 23px;
+    border-radius: 10px;
+}
+
+.footer-measures{
+    background-color:#ffe6cd;
+    margin-top:5% !important;
+    padding-top:2% !important;
+    padding-bottom:2% !important;
+}
+.measure>img{
+    height:50px !important;
+    width:50px !important;
+
+}
+.measure>p{
+    padding-top:5% !important;
+    font-size:12px !important;
+    justify-content: center!important;
+    text-align: center !important;
+}
+
+.safety-measures{
+    background: #f1f1f1 !important;
+    list-style: none;
+}
+
+.contact-social{
+    padding-top: 90px;
+}
+
+i.fab.fa-facebook {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+i.fab.fa-twitter-square{
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+i.fab.fa-instagram-square{
+    font-size: 30px;   
+}
+
+.online-list p {
+    font-size: 23px;
+}
+
+.lega-list p{
+    font-size: 23px;
+} 
+
+.contact-us p{
+    font-size: 23px;
+}
+
+.all-right p {
+    text-align: center;
+    opacity: 0.6;
+}
+
+.container-footer{
+    width: 99%;
+    margin-left: 7px;
+}
+
+.safety-measures{
+    width: 99%;
+    margin-left: 7px;
+}
+
+.footer-main{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+@media (max-width:700px){
+    .safety-measures-lower{
+        display:flex !important;
+        flex-direction: column!important;
+    }
+    .col-2.p-1.measure {
+        display: block;
+        margin-right: 31px;
+        width: 26%;
+        margin-top: 10px;
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+    
+    .footer-main{
+        display:flex !important;
+        justify-content: flex-start;
+        align-items:flex-start;
+        flex-direction: column;
+    }
+
+    .online-list,.lega-list,.contact-social{
+        margin-top:20px;
+        margin-left:20px;
+    }
+    .contact-social{
+        padding:0px;
+    }
+
+}
+

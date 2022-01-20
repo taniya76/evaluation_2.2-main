@@ -1,0 +1,44 @@
+@font-face{
+    font-family:mregular;
+    src:url(../fonts/Muli-Regular.ttf);
+}
+@font-face{
+    font-family:mitalic;
+    src: url(../fonts/Muli-Italic.ttf);
+}
+@font-face{
+    font-family:mlight;
+    src: url(../fonts/Muli-Light.ttf);
+}
+@font-face{
+    font-family:milight;
+    src:url(../fonts/Muli-LightItalic.ttf);
+}
+
+
+.fontitalic{
+    font-family:miitalic;
+}
+.fontlight{
+    font-family:mlight;
+}
+.fontregular{
+    font-family:mregular;
+}
+.fontlightitalic{
+    font-family:milight;
+}
+.para-1{
+    font-weight: 800;
+}
+.cart-h{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:500px;
+}
+@media (max-width: 700px) {
+    .youtube-class{
+        width: 100%;
+    }
+
+}
