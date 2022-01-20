@@ -2,11 +2,13 @@ let buyGet = window.localStorage.getItem("items")
   ? JSON.parse(window.localStorage.getItem("items"))
   : [];
 
+
+//Data of Site  
 buyGet = [{
   id: 7,
   category: "Buy1Get1",
   imgSrc: "./images/categories/1.jpg",
-  name: " Non-veg pizzaa @275",
+  name: " Non-veg pizzaa",
   price: 275,
   veg: false
 },
@@ -14,21 +16,21 @@ buyGet = [{
   id: 8,
   category: "Buy1Get1",
   imgSrc: "./images/categories/2.jpg",
-  name: " Non-veg pizza @375",
+  name: "Veg pizza",
   price: 375,
-  veg: false
+  veg: true
 }, {
   id: 9,
   category: "Buy1Get1",
   imgSrc: "./images/categories/3.jpg",
-  name: "Non-veg pizza @175",
+  name: "Non-veg pizza",
   price: 175,
   veg: false
 }, {
   id: 10,
   category: "Buy1Get1",
   imgSrc: "./images/categories/4.jpg",
-  name: "Non-veg pizza @375 ",
+  name: "Non-veg pizza ",
   price: 575,
   veg: false
 }, {
@@ -38,7 +40,7 @@ buyGet = [{
   name: "Coke(475ml) ",
   price: 60,
   veg: true
-},{
+}, {
   id: 19,
   category: "sideAndBeverage",
   imgSrc: "./images/categories/beverages1.jpg",
@@ -82,7 +84,7 @@ buyGet = [{
   imgSrc: "./images/categories/Desserts3.jpg",
   name: "Hazelnut Brownie Dark choco cake",
   price: 575,
-  veg: true
+  veg: false
 },
 {
   id: 17,
@@ -112,23 +114,20 @@ buyGet = [{
 localStorage.setItem("items", JSON.stringify(buyGet));
 
 
+//function to display all items that will make a card and append it in my HTML
 
-//   buyGet.forEach(element => {
-//       console.log(element);
-//     displayBuyCard(element);
-//   });
-
-
-
-function displayBuyCard(buyGet) {
+function displayCard(buyGet,id) {
   // console.log(buyGet);
-  var card = `<div id = ${buyGet.id} class="card col-lg-3 col-md-6 cards-image" " style="width: 15rem;">
+  var card = `<div id = ${buyGet.id} class="card col-lg-3 col-md-6 cards-image" style= "width: 15rem;">
     <img class="card-img-top" src="${buyGet.imgSrc}" id="${buyGet.id}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">${buyGet.name}</h5>
       <p class="card-text"><em>Some quick example text to build on the card title.</em></p>
-      <div class="d-flex justify-content-between align-items-center">
-      <div class=""><i class="far fa-dot-circle text-danger"></i><p> ₹${buyGet.price}</p></div>
+      <div class="d-flex justify-content-between align-item-center">
+      <div class="d-flex">
+        <div style= "color: ${buyGet.veg ? "green" : "red"}"><i class="far fa-dot-circle me-2"></i></div>
+        <p> ₹${buyGet.price}</p>
+      </div>
       
       <button id = ${buyGet.id} class="btn btn-outline-danger">Add</button>
       </div>
@@ -136,66 +135,43 @@ function displayBuyCard(buyGet) {
     </div>
   </div>`
 
-  document.getElementById("buy1-get1").innerHTML += card;
+  document.getElementById(id).innerHTML += card;
 }
 
-function displayCokesCard(buyGet) {
-  // console.log(buyGet);
-  var card = `<div ${buyGet.id} class="card col-lg-3 col-md-6 cards-image"" style="width: 15rem;">
-    <img class="card-img-top" src="${buyGet.imgSrc}" id="${buyGet.id}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${buyGet.name}</h5>
-      <p class="card-text"><em>Some quick example text to build on the card title.</em></p>
-      <div class="d-flex justify-content-between align-items-center">
-      <div class=""><i class="far fa-dot-circle text-success"></i><p> ₹${buyGet.price}</p></div>
-      <button id = ${buyGet.id} class="btn btn-outline-danger">Add</button>
-      </div>
-    </div>
-  </div>`;
-
-  document.getElementById("side_cokes").innerHTML += card;
-}
-
-function displayDessertsCard(buyGet) {
-  // console.log(buyGet);
-  var card = `<div ${buyGet.id} class="card col-lg-3 col-md-6 cards-image" style= "width: 15rem;">
-    <img class="card-img-top" src="${buyGet.imgSrc}" id="${buyGet.id}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${buyGet.name}</h5>
-      <p class="card-text"><em>Some quick example text to build on the card title.</em></p>
-      <div class="d-flex justify-content-between align-items-center">
-      <div class=""><i class="far fa-dot-circle text-success"></i><p> ₹${buyGet.price}</p></div>
-      <button id = ${buyGet.id} class="btn btn-outline-danger">Add</button>
-      </div>
-    </div>
-  </div>`;
-
-  document.getElementById("desserts").innerHTML += card;
-}
+//to store count of dishes and display them according to their type
+var coke = 0, pizza = 0, deserts = 0;
 
 for (var i = 0; i < buyGet.length; i++) {
+
   if (buyGet[i].category === "Buy1Get1") {
-    displayBuyCard(buyGet[i]);
+    displayCard(buyGet[i],"buy1-get1");
+    pizza++;
+    document.getElementsByClassName("product")[0].innerHTML = pizza + " products";
   } else if (buyGet[i].category === "sideAndBeverage") {
-    displayCokesCard(buyGet[i]);
+    displayCard(buyGet[i],"side_cokes");
+    coke++;
+    document.getElementsByClassName("product")[1].innerHTML = coke + " products";
   } else if (buyGet[i].category === "Desserts") {
-    displayDessertsCard(buyGet[i]);
+    displayCard(buyGet[i],"desserts");
+    deserts++;
+    document.getElementsByClassName("product")[2].innerHTML = deserts + " products";
   }
+
 }
 
-
+//This will take care of Click event, whenever "Add to cart" button is pressed we will handle it here 
+//and add that particular item in cart
 var numOfCards = document.querySelectorAll(".card").length;
 console.log(numOfCards);
 
-
 for (var i = 0; i < numOfCards; i++) {
   document.querySelectorAll(".card")[i].addEventListener("click", function (e) {
-    // var newArray = [];
+
     console.log(e.target.id);
-    console.log(buyGet);
+
     for (var j = 0; j < buyGet.length; j++) {
       if (buyGet[j].id == e.target.id) {
-        // console.log(buyGet[j]);
+        //passing my object in a function 
         addToCart(buyGet[j]);
       }
     }
@@ -203,31 +179,37 @@ for (var i = 0; i < numOfCards; i++) {
 }
 
 
+//This function will filter my data and display only those item which are veg
+function fiterType() {
 
-function fiterType(){
-  // var type = e.target.value;
-  // veg = document.getElementsByClassName("veg");
-  // veg.classlist.add("d-none");
   document.getElementById("buy1-get1").innerHTML = "";
   document.getElementById("side_cokes").innerHTML = "";
   document.getElementById("desserts").innerHTML = "";
+  var coke = 0, pizza = 0, deserts = 0;
 
-  for(var i = 0; i<buyGet.length; i++){
-    if(buyGet[i].category === "Buy1Get1" && buyGet[i].veg == true){
-      displayBuyCard(buyGet[i])
-    }else if (buyGet[i].category === "sideAndBeverage" && buyGet[i].veg == true){
-      displayCokesCard(buyGet[i])
-    } else if(buyGet[i].category === "Desserts" && buyGet[i].veg == true){
-      displayDessertsCard(buyGet[i])
+  for (var i = 0; i < buyGet.length; i++) {
+    if (buyGet[i].category === "Buy1Get1" && buyGet[i].veg == true) {
+      displayCard(buyGet[i],"buy1-get1");
+      pizza++;
+      document.getElementsByClassName("product")[0].innerHTML = pizza + " products";
+    } else if (buyGet[i].category === "sideAndBeverage" && buyGet[i].veg == true) {
+      displayCard(buyGet[i],"side_cokes");
+      coke++;
+      document.getElementsByClassName("product")[1].innerHTML = coke + " products";
+    } else if (buyGet[i].category === "Desserts" && buyGet[i].veg == true) {
+      displayCard(buyGet[i],"desserts");
+      deserts++;
+      document.getElementsByClassName("product")[2].innerHTML = deserts + " products";
     }
   }
 }
 
-function fiterRefresh(){
+//To get all items back
+function fiterRefresh() {
   window.location.reload(true);
 }
 
-
+//used in search bar and show items according to user demand
 document.querySelector("#search").addEventListener("input", filterCards);
 
 function filterCards() {
@@ -244,74 +226,72 @@ function filterCards() {
   });
 }
 
-// function addToCart(item) {
-//   console.log(item);
-//   console.log("adding item");
+//to change the total value 
+function changeTotal(val) {
 
-//   var cartItem = `<div ${item.id} class="cart-item" style=width: 18rem;">
-//       <div class="card-body d-flex justify-content-between ">
-//         <p class="card-title">${item.name}</p>
-//         <h6 class="card-title">₹ ${item.price}</h6>
-//       </div>
-//     </div>`;
+  if (document.getElementsByClassName("totalBill")[0].innerHTML == "") {
+    document.getElementsByClassName("totalBill")[0].value = parseFloat(val);
+    document.getElementsByClassName("totalBill")[0].innerHTML = "Total: " + document.getElementsByClassName("totalBill")[0].value;
+  } else {
+    document.getElementsByClassName("totalBill")[0].value = parseFloat(document.getElementsByClassName("totalBill")[0].value) + (val);
+    document.getElementsByClassName("totalBill")[0].innerHTML = "Total: " + parseFloat(document.getElementsByClassName("totalBill")[0].value);
+  }
 
-//     if(document.getElementById("cartBar").innerText.slice(0,10)=="Empty Cart"){
-//       document.getElementById("cartBar").innerHTML = cartItem;
-//     } else{
-//       document.getElementById("cartBar").innerHTML += cartItem;
-//     }
-//    document.getElementById("cartBar").innerHTML = cartItem;
-// }
-
-function increase(){
-  var value = document.getElementById("quantity-input").value;
-  value = parseFloat(value)+1;
-  document.getElementById("quantity-input").value = value;
 }
 
-function decrease(){
-  var value = document.getElementById("quantity-input").value;
-  value = parseFloat(value)-1;
-  document.getElementById("quantity-input").value = value;
+//if we want to increase the amount of a particular item
+function increase(id) {
+  var numItemsInCart = document.getElementsByClassName("cart-item").length;
+  for (var i = 0; i < numItemsInCart; i++) {
+    if (document.getElementsByClassName("cart-item")[i].id == id) {
+      var value = document.getElementsByClassName("qty-input")[i].value;
+      value = parseFloat(value) + 1;
+      document.getElementsByClassName("qty-input")[i].value = value;
+    }
+  }
 }
 
-// var value = document.querySelector("#quantity-input");
-// value.addEventListener("change", function(){
-//   if (value.value == 0){
-//     document.getElementById("cartBar").innerHTML = "";
-//   }
-// })
+//if we want to decrease the amount of a particular item
+function decrease(id) {
+  var numItemsInCart = document.getElementsByClassName("cart-item").length;
+  for (var i = 0; i < numItemsInCart; i++) {
+    if (document.getElementsByClassName("cart-item")[i].id == id) {
+      var value = document.getElementsByClassName("qty-input")[i].value;
+      value = parseFloat(value) - 1;
+      document.getElementsByClassName("qty-input")[i].value = value;
+    }
+  }
+}
 
-function addToCart(item){
-  var cartItem = `<div ${item.id} class="cart-item" style=width: 18rem;">
+//This will append items in my cart
+function addToCart(item) {
+  var cartItem = `<div id=${item.id} class="cart-item" style=width: 18rem;">
   <div class="card-body d-flex justify-content-between ">
     <p class="card-title">${item.name}</p>
     <h6 class="card-title">₹ ${item.price}</h6>
   </div>
   <div class="quantity">
-  <button class=" decrease" onclick ="decrease()">-</button>
-  <input  class="qty-input" type="text" id="quantity-input" value ="1">
-  <button class="decrease" onclick ="increase()">+</button>
+    <button class="change_qty" onClick="decrease(${item.id}), changeTotal(${-item.price})">-</button>
+    <input  class="qty-input" type="text" value ="1">
+    <button class="change_qty" onClick="increase(${item.id}), changeTotal(${item.price})">+</button>
   </div>
 </div>`;
 
-if(document.getElementById("cartBar").innerText.slice(0,10)=="Empty Cart"){
-  document.getElementById("cartBar").innerHTML = cartItem;
-}else{
-  document.getElementById("cartBar").innerHTML += cartItem;
+  if (document.getElementById("cartBar").innerText.slice(0, 10) == "Empty Cart") {
+    document.getElementById("cartBar").innerHTML = cartItem;
+  } else {
+    document.getElementById("cartBar").innerHTML += cartItem;
+  }
+  changeTotal(item.price);
 }
 
-}
 
-
-
-
-
-
+//called when user press checkout
+//we can add payment methods here:)
 var catRefresh = document.getElementById("checkout");
 
-catRefresh.addEventListener("click", function(){
-    window.location.reload(true);
+catRefresh.addEventListener("click", function () {
+  window.location.reload(true);
 })
 
 
