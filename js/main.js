@@ -7,7 +7,7 @@ let buyGet = window.localStorage.getItem("items")
 buyGet = [{
   id: 7,
   category: "Buy1Get1",
-  imgSrc: "./images/categories/1.jpg",
+  imgSrc: "../images/categories/1.jpg",
   name: " Non-veg pizzaa",
   price: 275,
   veg: false
@@ -15,49 +15,49 @@ buyGet = [{
 {
   id: 8,
   category: "Buy1Get1",
-  imgSrc: "./images/categories/2.jpg",
+  imgSrc: "../images/categories/2.jpg",
   name: "Veg pizza",
   price: 375,
   veg: true
 }, {
   id: 9,
   category: "Buy1Get1",
-  imgSrc: "./images/categories/3.jpg",
+  imgSrc: "../images/categories/3.jpg",
   name: "Non-veg pizza",
   price: 175,
   veg: false
 }, {
   id: 10,
   category: "Buy1Get1",
-  imgSrc: "./images/categories/4.jpg",
+  imgSrc: "../images/categories/4.jpg",
   name: "Non-veg pizza ",
   price: 575,
   veg: false
 }, {
   id: 11,
   category: "sideAndBeverage",
-  imgSrc: "./images/categories/beverages1.jpg",
+  imgSrc: "../images/categories/beverages1.jpg",
   name: "Coke(475ml) ",
   price: 60,
   veg: true
 }, {
   id: 19,
   category: "sideAndBeverage",
-  imgSrc: "./images/categories/beverages1.jpg",
+  imgSrc: "../images/categories/beverages1.jpg",
   name: "Coke (375ml)",
   price: 50,
   veg: true
 }, {
   id: 12,
   category: "sideAndBeverage",
-  imgSrc: "./images/categories/beverages2.jpg",
+  imgSrc: "../images/categories/beverages2.jpg",
   name: "Cocktail",
   price: 75,
   veg: true
 }, {
   id: 13,
   category: "sideAndBeverage",
-  imgSrc: "./images/categories/beverages3.jpg",
+  imgSrc: "../images/categories/beverages3.jpg",
   name: "Lemon Juice",
   price: 85,
   veg: true
@@ -65,7 +65,7 @@ buyGet = [{
 {
   id: 14,
   category: "Desserts",
-  imgSrc: "./images/categories/Desserts1.jpg",
+  imgSrc: "../images/categories/Desserts1.jpg",
   name: "Chocolate Crusted Cheesecake",
   price: 575,
   veg: true
@@ -73,7 +73,7 @@ buyGet = [{
 {
   id: 15,
   category: "Desserts",
-  imgSrc: "./images/categories/Desserts2.jpg",
+  imgSrc: "../images/categories/Desserts2.jpg",
   name: "Rich Red Velvet Pastry",
   price: 575,
   veg: true
@@ -81,7 +81,7 @@ buyGet = [{
 {
   id: 16,
   category: "Desserts",
-  imgSrc: "./images/categories/Desserts3.jpg",
+  imgSrc: "../images/categories/Desserts3.jpg",
   name: "Hazelnut Brownie Dark choco cake",
   price: 575,
   veg: false
@@ -89,7 +89,7 @@ buyGet = [{
 {
   id: 17,
   category: "Desserts",
-  imgSrc: "./images/categories/Desserts4.jpg",
+  imgSrc: "../images/categories/Desserts4.jpg",
   name: "Hazelnut Chocolate Cake",
   price: 575,
   veg: true
@@ -97,7 +97,7 @@ buyGet = [{
 {
   id: 18,
   category: "Desserts",
-  imgSrc: "./images/categories/Desserts4.jpg",
+  imgSrc: "../images/categories/Desserts4.jpg",
   name: "Chocolate Cake",
   price: 575,
   veg: true
@@ -105,7 +105,7 @@ buyGet = [{
 {
   id: 20,
   category: "Desserts",
-  imgSrc: "./images/categories/Desserts1.jpg",
+  imgSrc: "../images/categories/Desserts1.jpg",
   name: "Milk Cake",
   price: 275,
   veg: true
